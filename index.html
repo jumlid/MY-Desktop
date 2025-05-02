@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="home">
+                <p>home</p>
+            </div>
+            <div class="more">
+                <h1>Hi i'm jumli </h1>
+                <h4>web developer,Discord bot developer</h4>
+                <div class="icons">
+                    <div class="icon" id="about">
+                        <p>About</p>
+                    </div>
+                    <div class="icon" id="links">
+                        <p>Links</p>
+                    </div>
+                    <div class="icon" id="contact">
+                        <p>Contact</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Comic Relief", system-ui;
+        }
+
+        .container {
+
+            height: 100vh;
+            background-color: #171717;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .main {
+            border: 2px solid white;
+            width: 750px;
+            height: 550px;
+            border-radius: 10px;
+            background-color: #0b1f3a;
+
+        }
+
+        .home {
+
+            border: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom: 2px solid white;
+            height: 50px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            background-color: #171717;
+
+        }
+
+        .more {
+
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .icons {
+
+
+            width: 70%;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .icon {
+            position: relative;
+            top: 80px;
+
+            height: 80px;
+            width: 80px;
+            background-image: url(src/icon_about_dark.webp);
+            background-position: center;
+            background-size: contain;
+            margin-left: 20px;
+           
+
+
+        }
+
+        .icon p {
+            position: relative;
+            top: 80px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #links {
+            background-image: url(src/icon_links_dark.webp);
+        }
+
+        #contact {
+            background-image: url(src/icon_contact_dark.webp);
+        }
+
+        .icon:hover,
+        .icon:hover p {
+
+
+            cursor: pointer;
+            background-size: 85px;
+            font-size: 25px;
+
+
+
+
+        }
+    </style>
+</body>
+
+</html>
