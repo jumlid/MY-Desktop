@@ -22,14 +22,25 @@
                 <h1>Hi i'm jumli </h1>
                 <h4>web developer,Discord bot developer</h4>
                 <div class="icons">
-                    <div class="icon" id="about">
-                        <p>About</p>
+                    <div class="icon" id="about" onclick="about()">
+                        <p>about</p>
+                        <div class="main" id="main_about">
+                            <div class="home">
+                                <p>about</p>
+
+                            </div>
+                            <div class="more">
+
+
+                            </div>
+
+                        </div>
                     </div>
                     <div class="icon" id="links">
-                        <p>Links</p>
+                        <p>links</p>
                     </div>
                     <div class="icon" id="contact">
-                        <p>Contact</p>
+                        <p>contact</p>
                     </div>
 
                 </div>
@@ -37,6 +48,7 @@
             </div>
 
         </div>
+
     </div>
 
 
@@ -61,6 +73,7 @@
         }
 
         .main {
+            position: absolute;
             border: 2px solid white;
             width: 750px;
             height: 550px;
@@ -68,6 +81,8 @@
             background-color: #0b1f3a;
 
         }
+
+
 
         .home {
 
@@ -121,7 +136,7 @@
             background-position: center;
             background-size: contain;
             margin-left: 20px;
-           
+
 
 
         }
@@ -130,7 +145,7 @@
             position: relative;
             top: 80px;
             text-align: center;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         #links {
@@ -141,19 +156,69 @@
             background-image: url(src/icon_contact_dark.webp);
         }
 
-        .icon:hover,
-        .icon:hover p {
+        .icon .main {
+
+            z-index: 2;
+            top: -340px;
+            left: -500px;
+            transform: scale(0);
+
+        }
+
+        .icon .main .home p {
+            top: 0;
+
+        }
+
+        @keyframes change {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+
+        .icon:hover {
 
 
             cursor: pointer;
             background-size: 85px;
-            font-size: 25px;
+            font-size: 20px;
 
 
 
 
         }
+
+        /*
+        .icon:hover .main {
+
+
+            transform: scale(1);
+        }*/
     </style>
+    <script>
+        function about() {
+            console.log('a')
+            document.getElementById('main_about').style.animation = 'change forwards 1s ease-in-out'
+
+        }
+
+        let main = document.getElementById('main_about')
+        main.addEventListener('mousedown', (e) => {
+
+        })
+        /*
+                setInterval(() => {
+                    addEventListener('mousemove', (e) => {
+                        console.log(e)
+                    })
+                }, 100)
+        */
+    </script>
 </body>
 
 </html>
