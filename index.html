@@ -14,27 +14,18 @@
 
 <body>
     <div class="container">
+        <div class="window"></div>
         <div class="main">
-            <div class="home">
+            <div class="home" id="a">
                 <p>home</p>
             </div>
             <div class="more">
                 <h1>Hi i'm jumli </h1>
                 <h4>web developer,Discord bot developer</h4>
                 <div class="icons">
-                    <div class="icon" id="about" onclick="about()">
+                    <div class="icon" id="about">
                         <p>about</p>
-                        <div class="main" id="main_about">
-                            <div class="home">
-                                <p>about</p>
 
-                            </div>
-                            <div class="more">
-
-
-                            </div>
-
-                        </div>
                     </div>
                     <div class="icon" id="links">
                         <p>links</p>
@@ -58,12 +49,19 @@
             padding: 0;
         }
 
+        .window {
+            position: absolute;
+            border: 1px solid red;
+            width: 100vw;
+            height: 100vh;
+        }
+
         body {
             font-family: "Comic Relief", system-ui;
         }
 
         .container {
-
+            border: 1px solid red;
             height: 100vh;
             background-color: #171717;
             display: flex;
@@ -73,7 +71,7 @@
         }
 
         .main {
-            position: absolute;
+            position: relative;
             border: 2px solid white;
             width: 750px;
             height: 550px;
@@ -158,9 +156,9 @@
 
         .icon .main {
 
+
             z-index: 2;
-            top: -340px;
-            left: -500px;
+
             transform: scale(0);
 
         }
@@ -201,23 +199,107 @@
         }*/
     </style>
     <script>
-        function about() {
-            console.log('a')
-            document.getElementById('main_about').style.animation = 'change forwards 1s ease-in-out'
-
-        }
-
+        /*
+                function about() {
+                    console.log('a')
+                    document.getElementsByClassName('main')[0].innerHTML += ` <div class="main" id="main_about">
+                                    <div class="home" id="about_home">
+                                        <p>about</p>
+                                    </div>
+                                    <div class="more">
+                                    </div>
+        
+                                </div>`
+                    document.getElementById('main_about').style.animation = 'change forwards 1s ease-in-out'
+                    document.getElementById('main_about').style.position = 'relative'
+                    document.getElementById('main_about').style.left = -50 + '%'
+                    document.getElementById('main_about').style.top = -80 + '%'
+        
+        
+                }
+                function link() {
+                    console.log('a')
+                    document.getElementsByClassName('main')[0].innerHTML += ` <div class="main" id="main_about">
+                                    <div class="home" id="about_home">
+                                        <p>Links</p>
+                                    </div>
+                                    <div class="more">
+                                    </div>
+        
+                                </div>`
+                    document.getElementById('main_about').style.animation = 'change forwards 1s ease-in-out'
+                    document.getElementById('main_about').style.position = 'relative'
+                    document.getElementById('main_about').style.left = -50 + '%'
+                    document.getElementById('main_about').style.top = -80 + '%'
+        
+        
+                }
+        */
+        let tab = `
+      <div class="main" id="main_about">
+                                    <div class="home" id="about_home">
+                                        <p>{c.target.id}</p>
+                                    </div>
+                                    <div class="more">
+                                    </div>
+        
+                                </div>
+      `
         let main = document.getElementById('main_about')
+        let handle = document.getElementsByClassName('home')[0]
+        document.addEventListener("click", (c) => {
+
+
+            switch (c.target.id) {
+                case "about":
+                    document.getElementsByClassName('window')[0].innerHTML += tab
+                    document.getElementById(`main_about`).style.position = 'absolute'
+                    document.getElementById(`main_about`).style.left = c.clientX + 'px'
+                    document.getElementById(`main_about`).style.top = c.clientY + 'px'
+
+                    //   alert(c.clientX )
+
+                    break;
+                case "links":
+                    document.getElementsByClassName('window')[0].innerHTML += tab
+                    document.getElementById(`main_about`).style.position = 'absolute'
+                    document.getElementById(`main_about`).style.left = c.clientX + 'px'
+                    document.getElementById(`main_about`).style.top = c.clientY + 'px'
+
+                    //   alert(c.clientX )
+
+                    break;
+
+
+                default:
+                    break;
+            }
+            handle.addEventListener("mouseup", (e) => {
+                if (e.target.id != 'a') {
+                    console.log(e)
+                }
+
+
+            })
+        })
+
+        /*document.addEventListener("mouseup",(e)=>{
+            console.log(e)
+        })*/
+
+        /*
+        document.addEventListener("click", (e) => {
+            if (e.target.id === "about") {
+                console.log(e.target)
+            }
+            console.log(e.target)
+
+        })*/
+        /*
         main.addEventListener('mousedown', (e) => {
 
-        })
-        /*
-                setInterval(() => {
-                    addEventListener('mousemove', (e) => {
-                        console.log(e)
-                    })
-                }, 100)
-        */
+        })*/
+
     </script>
 </body>
 
